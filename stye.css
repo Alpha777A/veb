@@ -1,0 +1,7 @@
+body {
+   background-image: url('2a71b20d4d767bb0a0a4b1fe9ecdf91e.jpg'); /* ใส่ลิงก์หรือชื่อไฟล์ภาพ */
+  background-size: cover; /* ปรับให้ภาพเต็มจอ */
+  background-position: center; /* จัดกึ่งกลาง */
+  background-repeat: no-repeat; /* ไม่ให้ภาพซ้ำ */
+}
+ 

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>หน้าต่อไป - ALPHA</title>
+  <style>
+    body {
+   
+
+      background-color: #c9f4fc; /* ฟ้าครามมิ้นอ่อน */
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+
+      background-image: url('2a71b20d4d767bb0a0a4b1fe9ecdf91e.jpg'); /* ใส่ลิงก์หรือชื่อไฟล์ภาพ */
+   background-size: cover; /* ปรับให้ภาพเต็มจอ */
+   background-position: center; /* จัดกึ่งกลาง */
+   background-repeat: no-repeat; /* ไม่ให้ภาพซ้ำ */
+    }
+    h1 {
+      color: #a7dcff;
+    }
+    p {
+      font-size: 24px;
+      color: #a7dcff;
+    }
+    .btn {
+      background-color: #2775a8;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+    .btn:hover {
+      background-color: #3f90c7;
+    }
+    
+    
+  </style>
+</head>
+<body>
+  <h1>กดเข้ามาควยไรนักหนา</h1>
+  <h1>เสือกเรื่องชาวบ้านจัง</h1>
+  <h1>อะหยอกๆ</h1>
+
+
+</body>
+
+<button class="btn" onclick="showPopup()">กดที่นี่เพื่อดูข้อความ</button>
+
+<script>
+  function showPopup() {
+    let popup = document.createElement("div");
+    popup.innerHTML = "เสือก";
+    popup.style.position = "fixed";
+    popup.style.top = "50%";
+    popup.style.left = "50%";
+    popup.style.transform = "translate(-50%, -50%)";
+    popup.style.backgroundColor = "white";
+    popup.style.color = "red"; /* สีแดง */
+    popup.style.padding = "100px";
+    popup.style.fontSize = "88px";
+    popup.style.border = "2px solid red";
+    popup.style.borderRadius = "50px";
+    popup.style.boxShadow = "0px 0px 10px rgba(0, 0, 0, 0.2)";
+    popup.style.zIndex = "1000";
+
+    // ปุ่มปิด
+    let closeBtn = document.createElement("button");
+    closeBtn.innerHTML = "ปิด";
+    closeBtn.style.marginTop = "20px";
+    closeBtn.style.padding = "35px 35px";
+    closeBtn.style.fontSize = "18px";
+    closeBtn.style.cursor = "pointer";
+    closeBtn.style.backgroundColor = "red";
+    closeBtn.style.color = "white";
+    closeBtn.style.border = "none";
+    closeBtn.style.borderRadius = "5px";
+
+    closeBtn.onclick = function() {
+      document.body.removeChild(popup);
+    };
+
+    popup.appendChild(document.createElement("br"));
+    popup.appendChild(closeBtn);
+
+    document.body.appendChild(popup);
+  }
+</script>

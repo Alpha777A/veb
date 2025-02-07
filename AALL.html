@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALPHA</title>
+  <style>
+    body {
+
+  background-image: url('2a71b20d4d767bb0a0a4b1fe9ecdf91e.jpg'); /* ใส่ลิงก์หรือชื่อไฟล์ภาพ */
+  background-size: cover; /* ปรับให้ภาพเต็มจอ */
+  background-position: center; /* จัดกึ่งกลาง */
+  background-repeat: no-repeat; /* ไม่ให้ภาพซ้ำ */
+  
+
+      background-color: #a0d8e2; /* ฟ้าครามมิ้นอ่อน */
+      font-family: "Kanit", serif;
+      display: flex;
+      justify-content: center; /* จัดให้อยู่กลางแนวนอน */
+      align-items: center; /* จัดให้อยู่กลางแนวตั้ง */
+      height: 100vh; /* ใช้ความสูงของหน้าจอทั้งหมด */
+      margin: 0;
+      text-align: center;
+    }
+    h1 {
+      font-family: "Kanit", serif;
+      color: #d1edff;
+    }
+    p{
+      font-family: "Kanit", serif;
+      color: #d1edff;
+    }
+    .btn {
+      background-color: #2775a8;
+      font-family: "Kanit", serif;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      font-size: 22 px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+    .btn:hover {
+      background-color: #3f90c7;
+    }
+    .btn.red {
+      background-color: #d9534f; /* ปุ่มสีแดง */
+    }
+    .hidden {
+      display: none;
+    }
+    .input-container {
+      margin-top: 20px;
+    }
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 70%;
+      margin-right: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+
+      
+
+    }
+  </style>
+</head>
+<body>
+
+
+  <div>
+    <h1>ยินดีต้อนรับสู่ ALPHA</h1>
+    <!-- ปุ่ม ลองกดดู -->
+    <button class="btn" id="showMessageBtn" onclick="showMessage()">ลองกดดู</button>
+  
+    <!-- ข้อความหลังจากกดปุ่ม -->
+    <div id="messageSection" class="hidden">
+      <p>สวัสดีเราชื่ออัลฟ่านะ แกชื่ออะไรหรอ?</p>
+      
+      <!-- ช่องกรอกคำตอบ -->
+      <div class="input-container">
+        <input type="text" id="nameInput" placeholder="กรุณาพิมพ์ชื่อของคุณ">
+      </div>
+      
+      <!-- ปุ่มส่ง -->
+      <button class="btn" id="submitBtn" onclick="submitAnswer()">กดส่ง</button>
+      
+      <!-- ปุ่มไปหน้าต่อไปที่จะแสดงหลังจากกด "กดส่ง" -->
+      <button class="btn hidden" id="nextPageBtn" onclick="goToNextPage()">ไปหน้าต่อไป</button>
+    </div>
+  </div>
+
+  <script>
+    // ฟังก์ชันที่จะแสดงข้อความเมื่อกดปุ่ม "ลองกดดู"
+    function showMessage() {
+      document.getElementById('showMessageBtn').style.display = 'none'; // ซ่อนปุ่ม "ลองกดดู"
+      document.getElementById('messageSection').classList.remove('hidden'); // แสดงข้อความ
+    }
+
+    // ฟังก์ชันเมื่อกดปุ่ม "กดส่ง"
+    function submitAnswer() {
+      var name = document.getElementById('nameInput').value; // รับค่าจากช่องกรอกคำตอบ
+      if (name.trim() === '') {
+        alert('กรุณากรอกชื่อก่อนส่ง');
+      } else {
+        alert('สวัสดี ' + name + ' ยินดีที่ได้รู้จักนะ');
+        // เปลี่ยนสีปุ่ม "กดส่ง" เป็นสีแดง
+        document.getElementById('submitBtn').classList.add('red');
+        document.getElementById('submitBtn').innerText = 'ส่งแล้ว!';
+        
+        // แสดงปุ่ม "ไปหน้าต่อไป"
+        document.getElementById('nextPageBtn').classList.remove('hidden');
+      }
+    }
+
+    // ฟังก์ชันพาไปหน้าต่อไป
+    function goToNextPage() {
+      window.location.href = "ALPHA.html"; // ไปยังหน้าใหม่
+    }
+  </script>
+</body>
+</html>
